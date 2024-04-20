@@ -1,0 +1,55 @@
+<apex:page contentType="text/html" controller="PortalMFAController" showHeader="false" lightningStylesheets="true" id="tokenPage">
+    <!-- Add custom CSS styles for the page -->
+    <style type="text/css">
+        .invalid {
+         border: 1px solid red !important;         
+        }
+        .required {
+         font-weight:bold;
+        }
+        .required:after {
+            content:"*";
+            color: red;
+        }
+    </style>
+    
+    <!-- Main content area -->
+    <div>
+        <div style="width:750px;margin-top:200px;margin-left:auto;margin-right:auto;border:1px solid rgb(116, 116, 116);padding:20px;">
+            <!-- Instructions for the user -->
+            <p>
+                To complete your login, please enter the multi-factor authentication token you received via email in the field below. <br/>
+                This token is a temporary code used to verify your identity and enhance the security of your account. <br/>
+                If you didn't receive the email or are experiencing issues, please check your spam folder or generate new token.
+            </p>
+            
+            <!-- Form to enter the token -->
+            <apex:form id="tokenForm">
+                <p class="required">Authentication Token:</p>
+                <apex:inputText value="{!userToken}" id="token" style="margin-left:0 !important;"/>
+                <apex:commandButton action="{!validateToken}" value="Proceed" onclick="return validate();" style="margin-left:10px !important;"/>
+                <apex:commandButton action="{!generateToken}" value="Generate" style="margin-left:10px !important;"/>
+                
+                <!-- Display an error message if the token is invalid -->
+                <p style="{!IF( invalidToken == false, 'display:none', 'color:red;')}" >Token is not valid. Please try again or generate new token.</p>
+            </apex:form>
+        </div> 
+    </div>
+    
+    <!-- JavaScript function to validate the token input -->
+    <script> 
+      window.onload = function() {
+          {!sendToken()};
+      };
+      
+      function validate() {
+            var token = document.getElementById("tokenPage:tokenForm:token");
+            if(token.value != '') {
+                return true; 
+            } else {
+                token.classList.add('invalid');                
+             return false;
+            }
+        }
+ </script>
+</apex:page>
