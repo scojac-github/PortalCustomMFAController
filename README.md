@@ -1,5 +1,3 @@
-README.md
-
 # Two-Factor Authentication for Experience Cloud Users
 
 This project provides a workaround for setting up Two-Factor Authentication (2FA) for Salesforce Community users with Partner Community or Customer Community licenses.
