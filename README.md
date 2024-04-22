@@ -16,7 +16,7 @@ This project uses a Visualforce page to generate a token, send an email containi
 
 Requires an Org Wide Email Address.
 
-Replace `<EmailAddress>` with a valid OrgWideEmailAddress that is allowed for Community Profiles in both the Visualforce Page and the Apex Controller.
+Update the `orgWide` variable in `PortalMFAController.cls` to the email address of the org-wide email you want to use to send the token emails.
 
 ## License
 
