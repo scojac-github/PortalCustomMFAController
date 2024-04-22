@@ -24,6 +24,10 @@ Requires an Org Wide Email Address.
 
 Update the `orgWide` variable in `PortalMFAController.cls` to the email address of the org-wide email you want to use to send the token emails.
 
+## High-level Diagram
+
+![diagram](https://github.com/scojac-github/PortalCustomMFAController/blob/diagram.png?raw=true)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
