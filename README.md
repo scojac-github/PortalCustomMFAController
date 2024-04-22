@@ -26,7 +26,7 @@ Update the `orgWide` variable in `PortalMFAController.cls` to the email address 
 
 ## High-level Diagram
 
-![diagram](https://github.com/scojac-github/PortalCustomMFAController/blob/diagram.png?raw=true)
+![diagram](https://github.com/scojac-github/PortalCustomMFAController/blob/main/diagram.png)
 
 ## License
 
