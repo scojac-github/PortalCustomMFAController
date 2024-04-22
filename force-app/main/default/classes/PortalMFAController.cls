@@ -2,7 +2,7 @@
  * @ Author: Scott Jacobson
  * @ Create Time: 2024-04-19 21:34:20
  * @ Modified by: Your name
- * @ Modified time: 2024-04-22 14:41:13
+ * @ Modified time: 2024-04-22 16:25:38
  * @ Description: Apex Class to generate a token for external (Experience site) users. Used in conjunction with Visualforce Page and Login Flow
  */
 
@@ -11,7 +11,7 @@ public class PortalMFAController {
     public String token {get; set;}
     public String userToken {get; set;}
     public Boolean invalidToken {get; set;}
-    public String orgEmail = 's.jacobson267+owed@gmail.com';
+    public String orgEmail = 'yourEmailAddress@goesHere.com';
     
     public void sendToken() {
         generateToken();
