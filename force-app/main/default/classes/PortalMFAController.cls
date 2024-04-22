@@ -2,7 +2,7 @@
  * @ Author: Scott Jacobson
  * @ Create Time: 2024-04-19 21:34:20
  * @ Modified by: Your name
- * @ Modified time: 2024-04-22 12:00:25
+ * @ Modified time: 2024-04-22 14:41:13
  * @ Description: Apex Class to generate a token for external (Experience site) users. Used in conjunction with Visualforce Page and Login Flow
  */
 
