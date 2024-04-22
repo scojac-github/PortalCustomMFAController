@@ -1,4 +1,7 @@
 <apex:page contentType="text/html" controller="PortalMFAController" showHeader="false" action="{!sendToken}" lightningStylesheets="true" id="tokenPage">
+    <head>
+        <apex:slds />
+    </head>
     <style type="text/css">
         .invalid {
          border: 1px solid red !important;         
@@ -14,16 +17,17 @@
     <div>
         <div style="width:750px;margin-top:200px;margin-left:auto;margin-right:auto;border:1px solid rgb(116, 116, 116);padding:20px;">
             <p>
-                To complete your login, please enter the multi-factor authentication token you received via email in the field below. <br/>
-                This token is a temporary code used to verify your identity and enhance the security of your account. <br/>
-                If you didn't receive the email or are experiencing issues, please check your spam folder or generate new token.
+                To complete your login, please enter the multi-factor authentication token you received via email in the field below. <br/><br/>
+                This token is a temporary code used to verify your identity and enhance the security of your account. <br/><br/>
+                If you didn't receive the email or are experiencing issues, please check your spam folder or generate a new token.
             </p>
+            <div><br/></div>
             <apex:form id="tokenForm">
                 <p class="required">Authentication Token:</p>
                 <apex:inputText value="{!userToken}" id="token" style="margin-left:0 !important;"/>
-                <apex:commandButton action="{!validateToken}" value="Proceed" onclick="return validate();" style="margin-left:10px !important;"/>
-                <apex:commandButton action="{!generateToken}" value="Generate" style="margin-left:10px !important;"/>
-                <p style="{!IF( invalidToken == false, 'display:none', 'color:red;')}" >Token is not valid. Please try again or generate new token.</p>
+                <apex:commandButton action="{!validateToken}" value="Proceed" onclick="return validate();" styleClass="slds-button slds-button--brand" style="margin-left:10px !important;"/>
+                <apex:commandButton action="{!generateToken}" value="Regenerate" styleClass="slds-button slds-button_outline-brand" style="margin-left:10px !important;"/>
+                <p style="{!IF( invalidToken == false, 'display:none', 'color:red;')}" >Token is not valid. Please try again or generate a new token.</p>
             </apex:form>
         </div> 
     </div>
