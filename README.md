@@ -16,13 +16,16 @@ This project uses Apex and a Visualforce page to generate a token, send an email
 ## Other items to check
 
 1. Ensure the Profile(s) have access to the Apex class, Visualforce page, and organization-wide email address.
-2. 
 
 ## Important Note
 
 Requires an Org Wide Email Address.
 
 Update the `orgWide` variable in `PortalMFAController.cls` to the email address of the org-wide email you want to use to send the token emails.
+
+## Considerations
+
+Each login will count towards your org's single use email limit. Consider how many logins per day you might have to your Experience Cloud site(s) before utilizing this solution.
 
 ## High-level Diagram
 
